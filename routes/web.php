@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/sub', 'SubscriptionController@index')->name('sub');
+Route::get('/sub-list', 'SubscriptionController@listSubscriptions')->name('subList');
+Route::post('subscribe', ['as'=>'subscribe','uses'=>'SubscriptionController@createSubscription']);
+Route::post('add-address', ['as'=>'add-address','uses'=>'SubscriptionController@addressPost']);
